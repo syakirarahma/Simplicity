@@ -26,6 +26,10 @@
                 <td>{{ $item->id }}</td>
             </tr>
             <tr>
+                <th>Waktu</th>
+                <td>{{ $item->created_at }}</td>
+            </tr>
+            <tr>
                 <th>Paket Daging</th>
                 <td>{{ $item->meat_package->title }}</td>
             </tr>
