@@ -1,7 +1,7 @@
 {{-- @extends('layouts.app')
 
 @section('title')
-Happy Meat
+Order Meat Online - Happy Meat
 @endsection
 
 @section('content') --}}
@@ -18,7 +18,10 @@ Happy Meat
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet"/>
     <link href="frontend/image/logo.png" rel="shortcut icon" >
     <script src="js/main.js" crossorigin="anonymous"></script>
-    <title>Happy Meat</title>
+    <title>Order Meat Online - Happy Meat</title>
+    <meta name="description" content="Buying meat is now easier by order it online. Grab yours now! We also provide some info and tips about meat.">
+    <meta name="keywords" content="meat, daging, order daging, jual daging, daging sapi">
+    <meta name="author" content="Simplicity">
   </head>
   <body class="body">
     <div class="header">
@@ -39,7 +42,7 @@ Happy Meat
             </p>
           </div>
           <div class="right-block-hero-lp">
-            <img class="image-hero-lp" src="frontend/image/image.png" />
+            <img class="image-hero-lp" src="frontend/image/image.png" alt="etalase daging" />
           </div>
         </div>
       </div>
