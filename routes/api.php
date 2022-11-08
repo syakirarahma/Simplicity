@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\MeatPackageController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\Admin\TransactionController;
-
+use App\Http\Controllers\API\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +16,15 @@ use App\Http\Controllers\Admin\TransactionController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('login', [AuthController::class, 'login']);
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    // return $request->user();
+Route::group(['prefix' => 'auth', 'middleware' => 'auth:sanctum'], function(){
+    Route::post('logout', [AuthController::class, 'logout']);
 });
+// });
 
-Route::get('meatPackage', [ProductController::class, 'index']);
-Route::post('meatPackage', [ProductController::class, 'store']);
-Route::put('/meatPackage/{id}', [ProductController::class, 'update']);
-Route::delete('/meatPackage/{id}', [ProductController::class, 'destroy']);
-Route::get('transaction', [TransactionController::class, 'index']);
+Route::get('meat_packages', [MeatPackageController::class, 'all']);
+Route::post('meat_packages', [MeatPackageController::class, 'create']);
+Route::put('meat_packages/{id}', [MeatPackageController::class, 'update']);
+Route::delete('meat_packages/{id}', [MeatPackageController::class, 'delete']);
