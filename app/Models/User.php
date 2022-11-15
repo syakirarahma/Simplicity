@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
+// class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -44,4 +45,9 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function order(){
+        return $this->hasMany(Order::class, 'user_id', 'id');
+    }
 }

@@ -20,7 +20,7 @@
 
 <div class="card shadow">
     <div class="card-body">
-        <form action="{{ route('meat-package.update', $item->id) }}" method="post">
+        <form action="{{ route('video-tutorial.update', $item->id) }}" method="post">
             @method('PUT')
             @csrf
             <div class="form-group">
@@ -28,16 +28,20 @@
                 <input type="text" class="form-control" name="title" placeholder="Title" value="{{ $item->title }}">
             </div>
             <div class="form-group">
-                <label for="type">Type</label>
-                <input type="text" class="form-control" name="type" placeholder="Type" value="{{ $item->type }}">
+                <label for="resource">Resource</label>
+                <input type="text" class="form-control" name="resource" placeholder="resource" value="{{ $item->resource }}">
             </div>
             <div class="form-group">
-                <label for="about">About</label>
-                <textarea name="about" rows="10" class="d-block w-100 from-control">{{ $item->about }}</textarea>
+                <label for="creator">Creator</label>
+                <textarea name="creator" rows="10" class="d-block w-100 from-control">{{ $item->creator }}</textarea>
             </div>
             <div class="form-group">
-                <label for="price">Price</label>
-                <input type="number" class="form-control" name="price" placeholder="price" value="{{ $item->price }}">
+                <label for="publish">Publish</label>
+                <textarea name="publish" rows="10" class="d-block w-100 from-control">{{ $item->publish }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="desc">Desc</label>
+                <textarea name="desc" rows="10" class="d-block w-100 from-control">{{ $item->desc }}</textarea>
             </div>
             <button class="btn btn-primary btn-block" type="submit">
                 Ubah

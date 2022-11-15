@@ -10,43 +10,43 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item {{ Request::is('admin') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/meat-package') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('meat-package.index') }}">
             <i class="fas fa-fw fa-hotel"></i>
             <span>Paket Daging</span></a>
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/gallery') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('gallery.index') }}">
             <i class="fas fa-fw fa-images"></i>
             <span>Gallery Daging</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/artikel-package') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('artikel-package.index') }}">
             <i class="fas fa-fw fa-hotel"></i>
             <span>Artikel</span></a>
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/artikel-gallery') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('artikel-gallery.index') }}">
             <i class="fas fa-fw fa-images"></i>
             <span>Gallery Artikel</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/video-tutorial') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('video-tutorial.index') }}">
             <i class="fas fa-fw fa-images"></i>
             <span>Video Tutorial</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/transaction') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('transaction.index') }}">
             <i class="fas fa-fw fa-dollar-sign"></i>
             <span>Transaksi</span></a>

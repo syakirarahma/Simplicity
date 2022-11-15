@@ -37,18 +37,16 @@ Route::get('/user-login', function(){
 Route::get('/user-register', function(){
     return view('pages/register');
 });
-// Route::get('/detail-product', function(){
-//     return view('pages/detail_produk');
-// });
+
 Route::get('/my-account', function(){
     return view('pages/myaccount');
 });
-// Route::get('/my-order', function(){
-//     return view('pages/myorder');
-// });
 
 Route::get('/my-order', 'App\Http\Controllers\MyOrderController@index')
     ->name('my-order');
+
+Route::get('/my-cart', 'App\Http\Controllers\CartController@index')
+    ->name('my-cart');
     
 Route::get('/detail-order', function(){
     return view('pages/detail_order');
@@ -56,34 +54,29 @@ Route::get('/detail-order', function(){
 Route::get('/checkout-order', function(){
     return view('pages/checkout');
 });
-Route::get('/mycart', function(){
-    return view('pages/cart');
-});
+
 Route::get('/detail-artikel', function(){
     return view('pages/detail_artikel');
 });
-// Route::get('/product', function(){
-//     return view('pages/produk');
-// });
+
 Route::get('/article', function(){
     return view('pages/artikel');
 });
-
-// Route::get('/detail-video', function(){
-//     return view('pages/detail_videotutor');
-// });
-
-Route::get('/video', 'App\Http\Controllers\VideoController@index')
+    
+    Route::get('/video', 'App\Http\Controllers\VideoController@index')
     ->name('video');
-
-Route::get('/product', 'App\Http\Controllers\ProductController@index')
+    
+    Route::get('/product', 'App\Http\Controllers\ProductController@index')
     ->name('product');
-
-Route::get('/article', 'App\Http\Controllers\ArtikelController@index')
+    
+    Route::get('/article', 'App\Http\Controllers\ArtikelController@index')
     ->name('article');
-
-Route::get('/detail_produk/{slug}', 'App\Http\Controllers\DetailController@index')
+    
+    Route::get('/detail_produk/{slug}', 'App\Http\Controllers\DetailController@index')
     ->name('detail_produk');
+
+    Route::get('/order/{id}', 'App\Http\Controllers\OrderController@index')
+    ->name('order');
 
 Route::get('/detail_video/{slug}', 'App\Http\Controllers\DetailVideoController@index')
     ->name('detail_video');
@@ -129,6 +122,7 @@ Route::prefix('admin')
     });
     
 Auth::routes(['verify' => true]);
+// Auth::routes();
 
 //Midtrans
 Route::post('/midtrans/callback', 'App\Http\Controllers\MidtransController@notificationHandler');

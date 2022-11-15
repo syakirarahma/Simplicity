@@ -30,12 +30,15 @@ class CheckoutController extends Controller
 
     public function process(Request $request, $id)
     {
+        // dd($request);
         $meat_package = MeatPackage::findOrFail($id);
+        $transaction_total = $meat_package->price * $request->qty;
 
         $transaction = Transaction::create([
             'meat_packages_id' => $id,
+            'qty' => $request->qty,
             'users_id' => Auth::user()->id,
-            'transaction_total' => $meat_package->price,
+            'transaction_total' => $transaction_total,
             'transaction_status' => 'IN_CART',
            
         ]);
@@ -64,6 +67,11 @@ class CheckoutController extends Controller
         $transaction = Transaction::with(['details','meat_package.galleries',
         'user'])->findOrFail($id);
         $transaction->transaction_status = 'PENDING';
+        
+        // foreach($transaction as $transactions){
+        //     $meat_package = MeatPackage::where('id',$transactions->transaction_id)->first();
+        //     $meat_package->stock = $meat_package->stock - $transactions->qty;
+        // }
 
         $transaction->save();
 

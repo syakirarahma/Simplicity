@@ -17,7 +17,7 @@
     <div class="main">
         <div class="container">
             <h2 class="profil-saya">Pesanan</h2>
-            <div class="col-md-5 profile">
+            <div class="col-md-4 profile">
                 <div class="profile-name">
                     <div class="profile-photo"><img src="img/meatt.png" alt=""></div>
                     <h3 class="user-name">Halo {{ Auth::user()->username }}!</h3>
@@ -28,7 +28,7 @@
                     {{-- <p><a href="" class="title">Log Out</a></p> --}}
                 </div>
             </div>
-            <div class="col-md-7 order">
+            <div class="col-md-8 order">
                 <h4>Pesanan</h4>
                 <div class="table-responsive">
                     <table class="table table-striped mx-auto w-auto">
@@ -38,8 +38,11 @@
                             {{-- <th>ID Order</th> --}}
                             <th>Tanggal</th>
                             <th>Produk</th>
+                            <th>Qty</th>
+                            <th>Harga Satuan</th>
                             <th>Status</th>
-                            <th>Harga</th>
+                            <th>Total Harga</th>
+                            {{-- <th>Detail</th> --}}
                         </tr>
                         @forelse ($items as $item)
                             <tr>
@@ -47,9 +50,11 @@
                                 {{-- <td>{{ $item->id }}</td> --}}
                                 <td>{{ $item->created_at }}</td>
                                 <td>{{ $item->meat_package->title }}</td>
+                                <td>{{ $item->qty }}</td>
+                                <td>{{ $item->meat_package->price }}</td>
                                 <td>{{ $item->transaction_status }}</td>
                                 <td>{{ $item->transaction_total }}</td>
-                                <!--<td><a href="{{ route('detail-order', $item->id) }}" type="button" class="detail-btn">Detail</a></td>-->
+                                {{-- <td><a href="{{ route('checkout_process', $item->id) }}" type="button" class="detail-btn">Detail</a></td> --}}
                             </tr>
                         @empty
                         <tr>

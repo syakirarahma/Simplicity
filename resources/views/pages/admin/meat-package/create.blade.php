@@ -31,6 +31,10 @@
                 <input type="text" class="form-control" name="type" placeholder="Type" value="{{ old('type') }}">
             </div>
             <div class="form-group">
+                <label for="stock">stock</label>
+                <input type="number" class="form-control" name="stock" placeholder="stock" value="{{ old('stock') }}">
+            </div>
+            <div class="form-group">
                 <label for="about">About</label>
                 <textarea name="about" rows="10" class="d-block w-100 from-control">{{ old('about') }}</textarea>
             </div>

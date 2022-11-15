@@ -62,8 +62,9 @@ class MeatPackageController extends Controller
         try {
             $data = new MeatPackage;
             $data->title = $request->input('title');
-            $data->slug = $request->input('slug');
+            // $data->slug = $request->input('slug');
             $data->type = $request->input('type');
+            $data->stock = $request->input('stock');
             $data->about = $request->input('about');
             $data->price = $request->input('price');
             $data['slug'] = Str::slug($request->title);

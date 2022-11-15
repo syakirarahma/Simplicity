@@ -17,7 +17,7 @@
     <div class="main">
         <div class="container">
             <h2 class="profil-saya">Profil Saya</h2>
-            <div class="col-md-5 profile">
+            <div class="col-md-4 profile">
                 <div class="profile-name">
                     <div class="profile-photo"><img src="img/meatt.png" alt=""></div>
                     <h3 class="user-name">Halo {{ Auth::user()->username }}!</h3>

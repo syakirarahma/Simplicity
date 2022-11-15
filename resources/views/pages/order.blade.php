@@ -29,10 +29,10 @@
                     <p>{{!! $item->about !!}}</p>
                     @auth
                     <form action="{{route('checkout_process',$item->id)}}" method="post">
-                    {{-- <form action="{{route('cart', $item->id)}}" method="post"> --}}
+                    {{-- <form action="{{ route('cart', $item->id) }}" method="post"> --}}
                   
                     @csrf
-                    <h6>Kuantitas: <input type="number" name="qty" min="1" max="5" class="form-control" required value="1"></td></h6>
+                        <h6>Kuantitas: <input type="number" name="qty" min="1" max="5" class="form-control" required value="1"></td></h6>
                         {{-- <button type="submit">
                             Checkout
                         </button> --}}

@@ -11,7 +11,7 @@ class Transaction extends Model
 
 
     protected $fillable = [
-        'meat_packages_id', 'users_id', 'transaction_total',
+        'meat_packages_id','qty', 'users_id', 'transaction_total',
         'transaction_status'
     ];
 

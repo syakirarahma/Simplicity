@@ -11,7 +11,7 @@ class MeatPackage extends Model
 
 
     protected $fillable = [
-        'title', 'slug', 'type', 'price', 'about'
+        'title', 'slug', 'stock', 'type', 'price', 'about'
     ];
 
     protected $hidden =  [
@@ -20,5 +20,9 @@ class MeatPackage extends Model
 
     public function galleries(){
         return $this->hasMany(Gallery::class, 'meat_packages_id', 'id');
+    }
+
+    public function cart(){
+        return $this->hasMany(Cart::class, 'meat_packages_id', 'id');
     }
 }

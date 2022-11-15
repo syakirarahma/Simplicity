@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -37,4 +38,29 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // public function authenticate(Request $request){
+    //     $response = Http::asForm()->post('http://apiwfl.herokuapp.com/api/login', [
+    //         'email' => $request->input('email'),
+    //         'password' => $request->input('password'),
+    //     ]);
+    //     $status = $response->status();
+    //     if($status == 200){
+    //         $response = $response->object();
+    //         $token = $response->access_token;
+    //         $role = $response->role;
+    //         $id = $response->id;
+    //         $company_id = $response->company_id;
+    //         $username = $response->username;
+    //         $foto_profil = $response->foto_profil;
+    //         session(['token' => $token]);
+    //         session(['role' => $role]);
+    //         session(['id' => $id]);
+    //         session(['company_id' => $company_id]);
+    //         session(['username' => $username]);
+    //         session(['foto_profil' => $foto_profil]);
+    //         return redirect()->intended('/');
+    //     }
+    //     return back()->with('loginError', 'Login failed!');
+    // }
 }

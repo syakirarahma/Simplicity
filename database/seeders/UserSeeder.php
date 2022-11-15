@@ -22,6 +22,27 @@ class UserSeeder extends Seeder
             'address' => 'patimuan',
             'password' => Hash::make('rahasia'),
             'status' => 'active',
+            'roles' => 'ADMIN'
+        ]);
+
+        User::create([
+            'email' => 'yoko@gmail.com',
+            'username' => 'yoko',
+            'name' => 'yoko',
+            'address' => 'patimuan',
+            'password' => Hash::make('12345678'),
+            'status' => 'active',
+            'roles' => 'ADMIN'
+        ]);
+
+        User::create([
+            'email' => 'syakirarahma7@gmail.com',
+            'username' => 'syakira',
+            'name' => 'syakira',
+            'address' => 'hatimu',
+            'password' => Hash::make('12345678'),
+            'status' => 'active',
+            'roles' => 'USER'
         ]);
     }
 }

@@ -29,10 +29,9 @@
         @guest
         <div class="header-list list-right">
             <ul>
-                <!-- <li><a href="/mycart"><i class="fa fa-shopping-cart"></i></a></li> -->
+                {{-- <li><a href="/my-cart"><i class="fa fa-shopping-cart"></i></a></li> --}}
                 <li><a href="/user-login">Masuk</a></li>
                 <li><a href="/user-register">Daftar</a></li>
-                <!-- <li><i class="fa fa-shopping-cart"></i></li> -->
             </ul>
         </div>
         @endguest
@@ -40,13 +39,12 @@
         @auth
         <div class="header-list list-right">
             <ul>
+                <li><a href="/my-cart"><i class="fa fa-shopping-cart"></i></a></li>
                 <li><a href="/my-account">{{ Auth::user()->username }}</a></li>    
                 <li style="float:right; margin-top:-25px" class="li-btn"><form action="{{ url('logout') }}" method="POST">
                     @csrf
                     <button class="btn btn-danger logout-btn" type="submit" value="Logout"><b>Logout</b></button>
                   </form></li>
-                <!-- <li><i class="fa fa-shopping-cart"></i></li> -->
-                {{-- <li><a href="/mycart"><i class="fa fa-shopping-cart"></i></a></li> --}}
             </ul>
         </div>
 

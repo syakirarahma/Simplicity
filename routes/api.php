@@ -24,6 +24,12 @@ Route::group(['prefix' => 'auth', 'middleware' => 'auth:sanctum'], function(){
 });
 // });
 
+// Route::get('meatPackage', [ProductController::class, 'index']);
+// Route::post('meatPackage', [ProductController::class, 'store']);
+// Route::put('/meatPackage/{id}', [ProductController::class, 'update']);
+// Route::delete('/meatPackage/{id}', [ProductController::class, 'destroy']);
+// Route::get('transaction', [TransactionController::class, 'index']);
+
 Route::get('meat_packages', [MeatPackageController::class, 'all']);
 Route::post('meat_packages', [MeatPackageController::class, 'create']);
 Route::put('meat_packages/{id}', [MeatPackageController::class, 'update']);
