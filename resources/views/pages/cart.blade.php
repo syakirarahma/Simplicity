@@ -30,6 +30,7 @@
                     <?php 
                     $no = 1;
                     $total = 0; 
+                    // $sisa = $item->$meat_package->stock;
                     ?>
                     <tr>
                         <th>No</th>
@@ -43,7 +44,10 @@
                     </tr>
                     @forelse ($items as $item)
                         <tr>
-                            <?php $total += ($item->transaction_total) ?>
+                            <?php 
+                                $total += ($item->transaction_total);
+                                // $sisa -= ($item->qty);
+                            ?>
                             <td>{{ $no++ }}</td>
                             {{-- <td>{{ $item->created_at }}</td> --}}
                             <td>{{$item->meat_package->title }}</td>
@@ -51,14 +55,24 @@
                             <td>Rp {{ $item->meat_package->price }}</td>
                             {{-- <td>{{ $item->transaction_status }}</td> --}}
                             <td>Rp {{ $item->transaction_total }}</td>
-                            <td><a href="{{ route('checkout_process', $item->id) }}" type="button" class="btn btn-warning">Detail</a></td>
+                            {{-- <td><a href="{{ route('checkout_success', $item->id) }}" type="button" class="btn btn-warning">Payment</a></td> --}}
+                            <td><a href="{{ route('checkout-success', $item->id) }}" class="btn btn-success btn-join-now">Bayar</a>
+                                <a href="/my-cart/edit/{{ $item->id }}" class="btn btn-info btn-join-now">Edit</a>
+                                <form action="{{ route('delete-item', $item->id) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
                         </tr> 
                     @empty
-                    <tr>
-                        <td colspan="6" class="text-center">
-                            Data Kosong
-                        </td>
-                    </tr>
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                Data Kosong
+                            </td>
+                        </tr>
                     @endforelse
                     <tr>
                         <td colspan="4">Total Harga </td>
@@ -66,8 +80,8 @@
                     </tr>
                 </table>
             </div>
-            <a href="{{ route('checkout-success', $item->id) }}" class="btn btn-block btn-join-now mt-3 py-2" style="background-color:#FC5043; color: white">
-                Process Payment
+            <a href="/product" class="btn btn-block btn-join-now mt-3 py-2" style="background-color:#FC5043; color: white">
+                Lihat Produk Lain
             </a>
                 
             

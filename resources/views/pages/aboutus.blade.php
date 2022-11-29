@@ -85,24 +85,34 @@
 
           <div class="section-team-images-description">
             <div class="col">
-              <img src="frontend/image/131.jpg" alt="daging-ilustrasi" />
-              <h4>Syakira Rahma Fauziyah</h4>
+              <img src="frontend/image/571.jpg" alt="daging-ilustrasi" />
+              <h4>Muhammad Fachri Maulana</h4>
               <p>Project Manager</p>
+              <p>140810190057</p>
             </div>
             <div class="col">
               <img src="frontend/image/511.jpg" alt="perusahaan-ilustrasi" />
               <h4>Salma Tri Audryani</h4>
               <p>Designer</p>
-            </div>
-            <div class="col">
-              <img src="frontend/image/571.jpg" alt="harga-ilustrasi" />
-              <h4>Muhammad Fachri Maulana</h4>
-              <p>Front-End Developer</p>
+              <p>140810190051</p>
             </div>
             <div class="col">
               <img src="frontend/image/711.jpg" alt="harga-ilustrasi" />
               <h4>Ananda Miftakhul Syifa</h4>
               <p>Back-End Developer</p>
+              <p>140810190071</p>
+            </div>
+            <div class="col">
+              <img src="frontend/image/131.jpg" alt="harga-ilustrasi" />
+              <h4>Syakira Rahma Fauziyah</h4>
+              <p>Front-End Developer</p>
+              <p>140810190013</p>
+            </div>
+            <div class="col">
+                <img src="frontend/image/721.png" alt="harga-ilustrasi" />
+                <h4>Dimas Ramadhan Pradipta</h4>
+                <p>Front-End Developer</p>
+                <p>140810180072</p>
             </div>
           </div>
         </div>

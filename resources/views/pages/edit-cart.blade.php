@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Detail Produk</title>
+    <title>Edit Cart</title>
 </head>
 <body>
     <div class="header">
@@ -16,30 +16,30 @@
     <div class="main">
         <div class="col-md-12 product-part">    
             <div class="container detail-product">
-                @if($item->galleries->count())
+                @if($item->meat_package->galleries->count())
                 <div class="container col-lg-5 col-md-5 col-sm-12 col-12 foto-product">
-                    <img src="{{ Storage::url($item->galleries->first()->image) }}" alt="">
+                    <img src="{{ Storage::url($item->meat_package->galleries->first()->image) }}" alt="">
                 </div>
                 @endif
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12 desc-product">
-                    <h2>{{ $item->title }}</h2>
-                    <h4><a href="">{{ $item->type }}</a></h4>
-                    <h5>Rp.{{ $item->price }}/kg</h5>
-                    <h6>Stok: {{ $item->stock }}</h6>
-                    <p>{{!! $item->about !!}}</p>
+                    <h2>{{ $item->meat_package->title }}</h2>
+                    <h4><a href="">{{ $item->meat_package->type }}</a></h4>
+                    <h5>Rp.{{ $item->meat_package->price }}/kg</h5>
+                    <h6>Stok: {{ $item->meat_package->stock }}</h6>
+                    <p>{{!! $item->meat_package->about !!}}</p>
                     @auth
-                    <form action="{{route('checkout_process',$item->id)}}" method="post">
+                    <form action="/my-cart/update/{{ $item->id }}" method="post">
                     {{-- <form action="{{route('cart', $item->id)}}" method="post"> --}}
-                  
+                    @method('PUT')
                     @csrf
                       
-                    @if ($item->stock > 0)
-                        <h6>Kuantitas: <input type="number" name="qty" min="1" max="5" class="form-control" required value="1"></td></h6>
+                    @if ($item->meat_package->stock > 0)
+                        <h6>Kuantitas: <input type="number" name="qty" min="1" max="5" class="form-control" required value="{{ $item->qty }}"></td></h6>
                         {{-- <button type="submit">
                             Checkout
                         </button> --}}
                         <button type="submit"><i class="fa fa-shopping-cart"></i>
-                            Masukkan Keranjang
+                            Update Kuantitas
                         </button>
                     @else
                         <label for="sold">Sold Out</label>

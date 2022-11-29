@@ -67,12 +67,16 @@ class CheckoutController extends Controller
         $transaction = Transaction::with(['details','meat_package.galleries',
         'user'])->findOrFail($id);
         $transaction->transaction_status = 'PENDING';
+        // $transaction_id = $transaction->id;
+
+        // $transaction_detail = Transaction::where('transaction_id', $transaction_id)->get();
         
-        // foreach($transaction as $transactions){
+        // foreach($transaction_detail as $transactions){
         //     $meat_package = MeatPackage::where('id',$transactions->transaction_id)->first();
         //     $meat_package->stock = $meat_package->stock - $transactions->qty;
         // }
 
+        // $transaction->update();
         $transaction->save();
 
         //Set konfigurasi midtrans

@@ -144,7 +144,7 @@
                     <tr>
                       <td align="center" style="font-size:0px;padding:10px 25px;padding-top:30px;padding-right:25px;padding-bottom:30px;padding-left:25px;word-break:break-word;">
                         <div style="font-family:Playfair Display,
-                Times New Roman, serif;font-size:30px;font-weight:bold;line-height:1;text-align:center;color:#071c4d;">Don't Forget Your Wahyu!</div>
+                Times New Roman, serif;font-size:30px;font-weight:bold;line-height:1;text-align:center;color:#071c4d;">Don't Forget to Enjoy Your Meat!</div>
                       </td>
                     </tr>
                   </tbody>

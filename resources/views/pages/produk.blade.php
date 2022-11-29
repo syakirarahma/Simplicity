@@ -56,7 +56,7 @@
                 </div>
                 <div class="card-content-product">
                   <h2 class="heading-card-product">
-                    <a href="{{ route('order', $item->slug) }}">{{ $item->title }}</a>
+                    <a href="{{ route('detail_produk', $item->slug) }}">{{ $item->title }}</a>
                   </h2>
                   <p class="caption-card">
                     {{ $deskripsi }} ...
@@ -64,9 +64,11 @@
                   <div class="price-cart-card">
                     <div class="price-card">Rp {{ $item->price }}</div>
                     <div>
-                      <a href="{{ route('detail_produk', $item->slug) }}" class="buy"
-                        >Beli</a
-                      >
+                      @if ($item->stock > 0)
+                        <a href="{{ route('detail_produk', $item->slug) }}" class="buy">Beli</a>
+                      @else
+                        <label for="sold">Sold Out</label>
+                      @endif
                     </div>
                   </div>
                 </div>

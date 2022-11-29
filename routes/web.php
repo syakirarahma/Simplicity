@@ -47,6 +47,12 @@ Route::get('/my-order', 'App\Http\Controllers\MyOrderController@index')
 
 Route::get('/my-cart', 'App\Http\Controllers\CartController@index')
     ->name('my-cart');
+
+Route::get('/my-cart/edit/{id}', 'App\Http\Controllers\CartController@edit');
+Route::put('/my-cart/update/{id}', 'App\Http\Controllers\CartController@update');
+
+Route::delete('/my-cart/{id}', 'App\Http\Controllers\CartController@destroy')
+    ->name('delete-item');
     
 Route::get('/detail-order', function(){
     return view('pages/detail_order');
@@ -121,8 +127,8 @@ Route::prefix('admin')
         Route::resource('transaction', TransactionController::class);
     });
     
-Auth::routes(['verify' => true]);
-// Auth::routes();
+// Auth::routes(['verify' => true]);
+Auth::routes();
 
 //Midtrans
 Route::post('/midtrans/callback', 'App\Http\Controllers\MidtransController@notificationHandler');

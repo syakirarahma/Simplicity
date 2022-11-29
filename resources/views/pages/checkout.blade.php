@@ -54,9 +54,15 @@
         {{-- <a href="{{ route('checkout-success', $item->id) }}" class="btn btn-block btn-join-now mt-3 py-2" style="background-color:#FC5043; color: white">
                                     Process Payment
                                 </a> --}}
-        <a href="{{ route('my-cart') }}" class="btn btn-block btn-join-now mt-3 py-2" style="background-color:#FC5043; color: white">
-            Keranjang
-        </a>
+        <div class="col">
+            <a href="{{ route('my-cart') }}" class="btn btn-block btn-join-now mt-3 py-2" style="background-color:#FC5043; color: white">
+                Keranjang
+            </a>
+            <a href="{{ route('checkout-success', $item->id) }}" class="btn btn-block btn-join-now mt-3 py-2" style="background-color:#FC5043; color: white">
+                Process Payment
+            </a>
+
+        </div>
                             </div>
         <!--<div class="dropdown">-->
         <!--    <button style="background-color: orangered; color: white; width: 35%; float: right" class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">-->
